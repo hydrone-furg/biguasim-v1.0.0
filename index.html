@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="description"
+        content="BiguaSim: A Hybrid Multi-domain Simulator for Robotics High-Fidelity Simulation and Synthetic Dataset Generation.">
+  <meta name="keywords" content="BiguaSim, Simulation, Robotics, Unreal Engine">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>BiguaSim: A Hybrid Multi-domain Simulator for Robotics High-Fidelity Simulation and Synthetic Dataset Generation</title>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-PYVRSFMDRL"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+
+    gtag('js', new Date());
+
+    gtag('config', 'G-PYVRSFMDRL');
+  </script>
+
+  <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@500;700&family=Roboto:wght@400;500&display=swap" 
+    rel="stylesheet">
+
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+  <link rel="icon" href="./static/images/favicon.svg">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/bulma-carousel.min.js"></script>
+  <script src="./static/js/bulma-slider.min.js"></script>
+  <script src="./static/js/index.js"></script>
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar" role="navigation">
+  <div class="navbar-menu" style="justify-content: center;">
+    <div class="navbar-start">
+      <a class="navbar-item"style="color:#004975" href="#about">About</a>
+      <a class="navbar-item"style="color:#004975" href="#architecture">Architecture</a>
+      <a class="navbar-item"style="color:#004975" href="#features">Features</a>
+      <a class="navbar-item"style="color:#004975" href="#gallery">Sensor Outputs</a>
+      <a class="navbar-item"style="color:#004975" href="#example-task">Example</a>
+      <a class="navbar-item"style="color:#004975" href="#conclusion">Future</a>
+    </div>
+  </div>
+</nav>
+
+<!--Title and autors-->
+<section class="hero">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <h1 class="title is-1 publication-title"style="color:#004975">BiguaSim: Hybrid Multi-domain Simulator for Robotics</h1>
+          <div class="is-size-5 publication-authors">
+            <span class="author-block">
+              <a href="https://github.com/mgmateus/">Matheus G. Mateus</a><sup>1</sup>,</span>
+            <span class="author-block">
+              <a href="https://github.com/guilhermecdo/">Guilherme C. De Oliveira</a><sup>1</sup>,</span>
+            <span class="author-block">
+              <a href="https://lattes.cnpq.br/1008558661728683/">Luis Henrique K. Reichow</a><sup>1</sup>,
+            </span>
+            <span class="author-block">
+              <a href="">Alisson H. Kolling</a><sup>1</sup>,
+            </span>
+            <span class="author-block">
+              <a href="https://github.com/pedropmp/">Pedro M. Pinheiro</a><sup>1</sup>,
+            </span>
+            <span class="author-block">
+              <a href="http://lattes.cnpq.br/5551697165370587/">Paulo L. J. Drews-Jr</a><sup>1</sup>,
+            </span>
+          </div>
+
+          <div class="is-size-5 publication-authors">
+            <span class="author-block"><a href="https://www.furg.br/">
+              Federal University of Rio Grande - FURG</a><sup>1</sup></span>
+          </div>
+
+          <div class="column has-text-centered">
+            <div class="publication-links">
+
+              <!-- PDF Link. -->
+              <span class="link-block"style="color: #004975">
+                <a href=""
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fas fa-file-pdf"></i>
+                  </span>
+                  <span>Paper(coming soon)</span>
+                </a>
+              </span>
+
+              <span class="link-block">
+                <a href=""
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="ai ai-arxiv"></i>
+                  </span>
+                  <span>arXiv(coming soon)</span>
+                </a>
+              </span>
+
+              <!-- Video Link. -->
+              <span class="link-block">
+                <a href="https://www.youtube.com/watch?v=tFgrZjBxvcE"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-youtube"></i>
+                  </span>
+                  <span>Video</span>
+                </a>
+              </span>
+
+              <!-- Code Link. -->
+              <span class="link-block">
+                <a href=""
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-github"></i>
+                  </span>
+                  <span>Code(coming soon)</span>
+                  </a>
+              </span>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CLEAN HERO BANNER -->
+<section class="hero is-small" style="padding: 0; margin: 0; background-color: #002b47;">
+  <div class="hero-body" style="padding: 0;">
+    <div class="container" style="max-width: 100%; padding: 0;">
+      <img src="./static/images/uav_view.png" 
+           alt="BiguaSim main environment" 
+           style="width:100%; height:380px; object-fit:cover; opacity:0.92; filter:brightness(0.9) contrast(1.05);">
+    </div>
+  </div>
+</section>
+
+<!--About-->
+<section class="section" id="about">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-2" style="color:#004975;">What is BiguaSim?</h2>
+        <div class="content has-text-justified">
+          <p>
+            Due to the intricate tasks and environments, particular complexities arise in developing and testing algorithms for autonomous heterogeneous vehicle interactions. Additionally, there is a need for a large amount of high-fidelity annotated data in various conditions and environments. Focused on these needs, we introduce BiguaSim as a novel open-source multi-domain simulator built on Unreal Engine 5 (UE5). BiguaSim aims to generate synthetic, realistic, annotated data based on various sensor implementations, for both air and water vehicles. Our simulator includes multi-agent support with GPU-enabled dynamics and integration with robotics tools like ROS2 and ArduPilot. 
+            To demonstrate the simulator, we conducted a multi-domain data collection employing a sample coverage strategy. 
+          </p>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!--Architecture-->
+<section class="section" id="architecture">
+  <div class="container is-max-desktop">
+    <!-- Architecture. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-2"style="color:#004975">Architecture</h2>
+        <div class="content has-text-justified">
+          <p>
+            BiguaSim’s architecture is modular, supporting domain-specific simulation layers for air and underwater vehicles.
+            The simulator integrates with robotics middleware such as ROS2 and ArduPilot, enabling realistic control and sensor
+            feedback loops in complex environments.
+          </p>
+          <figure class="has-text-centered"style="color:#036B9D">
+            <img src="./static/images/architecture_diagram.png" alt="Architecture diagram" width="80%">
+            <figcaption>Overview of the BiguaSim architecture.</figcaption>
+          </figure>
+        </div>
+      </div>
+    </div>
+    <!--/ architecture. -->
+
+    <!--Features-->
+<section class="section" id="features">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-2" style="color:#004975;">Core Features</h2>
+        <div class="content has-text-justified">
+          <ul style="list-style-type:none; padding-left:0;">
+            <li><b>Aerial Domain:</b> Realistic UAV dynamics with wind simulation, LiDAR, and RGB cameras.</li>
+            <li><b>Underwater Domain:</b> AUVs with sonar, DVL, and hydrodynamic models for realistic motion.</li>
+            <li><b>Hybrid Scenarios:</b> Coordinated operations between air and underwater vehicles.</li>
+            <li><b>Dataset Generation:</b> Synchronized multi-sensor data for AI and robotics research.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!--Sensors output-->
+<section class="section" id="gallery">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-2" style="color:#004975;">Sensor Outputs & Visual Results</h2>
+        <div class="content has-text-justified">
+          <p>
+            BiguaSim provides a unified framework to visualize and export sensor data from multiple domains.
+            The simulator supports camera feeds, LiDAR point clouds, sonar images, and depth maps.
+          </p>
+
+          <!-- Mantém o teu carrossel exatamente igual -->
+          <div id="sensor-carousel" class="carousel results-carousel mt-5" data-autoplay="true" data-loop="true">
+            <div class="item has-text-centered">
+              <img src="./static/images/uav_annotation.png" alt="">
+              <figcaption class="mt-2" style="color:#001C39; font-weight:500;">
+                RGB annotation output
+              </figcaption>
+            </div>
+            <div class="item has-text-centered">
+              <img src="./static/images/uav_segmentation.png" alt="">
+              <figcaption class="mt-2" style="color:#001C39; font-weight:500;">
+                UAV segmentation
+              </figcaption>
+            </div>
+            <div class="item has-text-centered">
+              <img src="./static/images/uav_depth.png" alt="">
+              <figcaption class="mt-2" style="color:#001C39; font-weight:500;">
+                Depth generation
+              </figcaption>
+            </div>
+            <div class="item has-text-centered">
+              <img src="./static/images/uav_lidar.png" alt="">
+              <figcaption class="mt-2" style="color:#001C39; font-weight:500;">
+                LiDar Pointcloud
+              </figcaption>
+            </div>
+            <div class="item has-text-centered">
+              <img src="./static/images/auv_annotation.png" alt="">
+              <figcaption class="mt-2" style="color:#001C39; font-weight:500;">
+                AUV annotation
+              </figcaption>
+            </div>
+            <div class="item has-text-centered">
+              <img src="./static/images/auv_segmentation.png" alt="">
+              <figcaption class="mt-2" style="color:#001C39; font-weight:500;">
+                AUV segmentation
+              </figcaption>
+            </div>
+            <div class="item has-text-centered">
+              <img src="./static/images/auv_depth.png" alt="">
+              <figcaption class="mt-2" style="color:#001C39; font-weight:500;">
+                AUV Depth generation
+              </figcaption>
+            </div>
+            <div class="item has-text-centered">
+              <img src="./static/images/sonar_gt.png" alt="">
+              <figcaption class="mt-2" style="color:#001C39; font-weight:500;">
+                GT sonar
+              </figcaption>
+            </div>
+          </div>
+
+          <script>
+            // Inicializa o Bulma Carousel
+            bulmaCarousel.attach('#sensor-carousel', {
+              slidesToScroll: 1,
+              slidesToShow: 3,
+              loop: true,
+              autoplay: true,
+              autoplaySpeed: 3000,
+              pagination: false,
+            });
+
+          </script>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!--Example-->
+<section class="section" id="example-task">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-2" style="color:#004975;">Example: Multi-Domain Coverage Task</h2>
+        <div class="content has-text-justified">
+          <p>
+            To demonstrate BiguaSim in action, a coordinated mission can be performed where aerial and underwater vehicles survey a bridge using multi-modal sensors. 
+            The aerial vehicle monitors surface traffic and structural conditions, while the underwater vehicle detects submerged objects. 
+            The images below illustrate different perspectives and data outputs captured during this mission.
+          </p>
+
+          <div class="columns is-multiline is-variable is-2">
+            <!-- Visão externa do agente -->
+            <div class="column is-one-third has-text-centered"style="color:#036B9D">
+              <figure>
+                <img src="./static/images/auv_uav_both_view.png" alt="External view of vehicle" style="width:100%;">
+                <figcaption>Third-person view of the aerial and underwater vehicles.</figcaption>
+              </figure>
+            </div>
+
+            <!-- Visão planejada do algoritmo para a ponte -->
+            <div class="column is-one-third has-text-centered"style="color:#036B9D">
+              <figure>
+                <img src="./static/images/path.png" alt="Planned mission path" style="width:100%;">
+                <figcaption>Grid-based planned trajectory for complete coverage of the bridge.</figcaption>
+              </figure>
+            </div>
+
+            <!-- Dados underwater -->
+            <div class="column is-one-third has-text-centered"style="color:#036B9D">
+              <figure>
+                <img src="./static/images/sonar_mosaic.png" alt="Underwater sensor data" style="width:100%;">
+                <figcaption>Underwater sensor data combined with sonar point clouds.</figcaption>
+              </figure>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!--Future-->
+<section class="section" id="conclusion">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-2" style="color:#004975;">Future Directions</h2>
+        <div class="content has-text-justified">
+          <p>
+            BiguaSim continues to evolve as an open research platform for robotics simulation.
+            Upcoming developments include advanced environmental modeling, multi-robot coordination,
+            improved underwater acoustics, and reinforcement learning integration.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="BibTeX">
+  <div class="container is-max-desktop content">
+    <h2 class="title"style='color:#004975'>BibTeX</h2>
+    <pre><code>Coming Soon</code></pre>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container">
+    <div class="content has-text-centered">
+      <a class="icon-link"
+         href="">
+        <i class="fas fa-file-pdf"></i>
+      </a>
+      <a class="icon-link" href="" class="external-link" disabled>
+        <i class="fab fa-github"></i>
+      </a>
+    </div>
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content"style="color:#036B9D">
+          
+            <p>BiguaSim © 2025 - FURG Research Project</p>
+          <p>
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
